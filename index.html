@@ -26,7 +26,7 @@
             display: flex;
         }
 
-        /* Question Screen */
+  
         .question-screen {
             background: linear-gradient(135deg, #fce7f3, #e9d5ff, #fce7f3);
             align-items: center;
@@ -113,7 +113,7 @@
             animation: bounce 1s infinite;
         }
 
-        /* Game Screen */
+  
         .game-screen {
             background: linear-gradient(135deg, #ddd6fe, #fce7f3, #ddd6fe);
             cursor: none;
@@ -174,7 +174,7 @@
             font-size: 1rem;
         }
 
-        /* Success Screen */
+
         .success-screen {
             background: linear-gradient(135deg, #fce7f3, #ddd6fe, #fce7f3);
             align-items: center;
@@ -223,7 +223,7 @@
             color: #db2777;
         }
 
-        /* Background decorations */
+  
         .bg-decoration {
             position: absolute;
             font-size: 4rem;
@@ -240,7 +240,7 @@
             pointer-events: none;
         }
 
-        /* Animations */
+      
         @keyframes pulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.5; }
@@ -256,7 +256,6 @@
             50% { transform: translateY(-20px) rotate(180deg); }
         }
 
-        /* Responsive */
         @media (max-width: 640px) {
             .question-title {
                 font-size: 1.5rem;
@@ -278,9 +277,9 @@
     </style>
 </head>
 <body>
-    <!-- Question Screen -->
+
     <div id="questionScreen" class="screen question-screen active">
-        <!-- Background decorations -->
+        
         <div class="bg-decoration" style="left: 10%; top: 20%; animation-delay: 0s;">💕</div>
         <div class="bg-decoration" style="left: 80%; top: 30%; animation-delay: 1s;">🌸</div>
         <div class="bg-decoration" style="left: 20%; top: 70%; animation-delay: 2s;">🦋</div>
@@ -300,7 +299,7 @@
         </div>
     </div>
 
-    <!-- Game Screen -->
+   
     <div id="gameScreen" class="screen game-screen">
         <div class="game-header">
             <h2 class="game-title">Catch My Hearts! 💕</h2>
@@ -363,7 +362,7 @@
         let gameInterval;
         let moveInterval;
 
-        // Question screen logic
+       
         const yesButton = document.getElementById('yesButton');
         const noButton = document.getElementById('noButton');
         const noMessage = document.getElementById('noMessage');
@@ -397,7 +396,7 @@
             noMessage.style.display = 'block';
         }
 
-        // Game logic
+   
         function startGame() {
             gameActive = true;
             gameScore = 0;
@@ -444,7 +443,7 @@
                 heart.y += heart.speed;
                 heart.element.style.top = heart.y + '%';
 
-                // Check for catch
+             
                 if (heart.y > 80 && heart.y < 95 && Math.abs(heart.x - basketPosition) < 8) {
                     catchHeart(heart);
                     return false;
@@ -491,7 +490,7 @@
             }, 1000);
         }
 
-        // Mouse/touch movement for game
+       
         const gameScreen = document.getElementById('gameScreen');
         const basket = document.getElementById('basket');
 
@@ -513,7 +512,7 @@
             basket.style.left = basketPosition + '%';
         });
 
-        // Success screen floating hearts
+       
         function createFloatingHearts() {
             const container = document.getElementById('floatingHearts');
             for (let i = 0; i < 20; i++) {
@@ -529,7 +528,7 @@
             }
         }
 
-        // Screen management
+
         function showScreen(screenName) {
             document.querySelectorAll('.screen').forEach(screen => {
                 screen.classList.remove('active');
